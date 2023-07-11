@@ -1,0 +1,84 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (workspaces :wsps workspace)
+    (center)
+    (metrics)))
+
+(defwidget bar_secondary []
+  (centerbox :orientation "h"
+    (workspaces :wsps workspace_secondary)
+    (center)
+    (metrics_secondary)))
+
+(defwidget workspaces [wsps]
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+    (literal :content wsps)))
+
+(defwidget center []
+  (box ""))
+
+(defwidget metrics []
+  (box :class "metrics" 
+       :orientation "h" 
+       :space-evenly false 
+       :halign "end"
+       :spacing 10
+    (metric :img "volume.png"
+            :value "${volume}%"
+            :color "green"
+            :onclick "${home}/sliders/scripts/cycle")
+    (metric :img "wifi.png"
+            :value { wifi != "" ? wifi : "Not connected" }
+            :color "orange")
+    (metric :img "clock.png"
+            :value time
+            :color "purple")
+    (metric :img "calendar.png"
+            :value date
+            :color "blue")))
+
+(defwidget metrics_secondary []
+  (box :class "metrics" 
+       :orientation "h" 
+       :space-evenly false 
+       :halign "end"
+       :spacing 10
+    (metric :img "clock.png"
+            :value time
+            :color "purple")))
+
+(defwidget metric [img value color ?onclick]
+  (eventbox :onclick onclick
+    (box :orientation "h" 
+         :space-evenly false
+         :class "metric ${color}"
+      (image :path "${home}/images/${img}"
+             :image-width 15
+             :image-height 15
+             :halign "start")
+      (box :class "metric-value" value))))
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "30px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar))
+
+(defwindow bar_secondary
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "30px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar_secondary))

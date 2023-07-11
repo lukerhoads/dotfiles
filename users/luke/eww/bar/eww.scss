@@ -1,0 +1,81 @@
+// Global Styles
+.bar {
+  background-color: #181825;
+  color: #cdd6f3;
+  padding: 10px;
+}
+
+.bar_secondary {
+  background-color: #181825;
+  color: #cdd6f3;
+  padding: 10px;
+}
+
+button {
+  background-color: #1e1e2e;
+  color: #cdd6f3;
+  padding: 6px 20px;
+  border-radius: 3px;
+  font-family: 'Maple Mono NF';
+}
+
+button:hover {
+  background-color: #33334F;
+}
+
+// Global colors
+.red {
+  background-color: #f38ba8;
+}
+
+.orange {
+  background-color: #f9b387;
+}
+
+.yellow {
+  background-color: #f9e2af;
+}
+
+.green {
+  background-color: #a6e2a1;
+}
+
+.turquoise {
+  background-color: #95e2d5;
+}
+
+.blue {
+  background-color: #89b4f9;
+}
+
+.purple {
+  background-color: #cba5f7;
+}
+
+.workspaces {
+  padding: 6px 20px;
+}
+
+.metrics {
+  padding: 6px 20px;
+}
+
+// Class styles
+.metric {
+  padding: 6px 10px;
+  color: #181825;
+  border-radius: 2px;
+}
+
+.metric-value {
+  margin-left: 5px;
+}
+
+.active {
+  background-color: #cdd6f3;
+  color: #1e1e2e;
+}
+
+.workspace-button {
+  margin-right: 10px;
+}

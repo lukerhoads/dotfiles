@@ -1,0 +1,17 @@
+#!/bin/sh 
+pushd $(dirname ${BASH_SOURCE[0]})
+
+prevline=""
+
+update_volume() {
+    sh ./volume
+}
+
+update_volume
+pactl subscribe | while read -r line; do
+    if [[ $line == $prevline && $line == *"change"* ]]; then
+        update_volume
+    fi
+    prevline=$line
+done
+popd

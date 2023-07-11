@@ -1,0 +1,13 @@
+#!/bin/sh
+
+eww ping 
+if [ $? -ne 0 ]; then
+    eww daemon
+fi
+
+# windows=$(eww windows)
+# if [[ "$windows" == *"volume"* ]]; then
+#     eww close volume
+# fi
+
+eww close $1

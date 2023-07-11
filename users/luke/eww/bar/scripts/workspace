@@ -1,0 +1,26 @@
+#!/bin/sh 
+
+from=$1
+to=$2
+
+workspaces() {
+    result="(box"
+    focused_workspace=$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).name')
+    focused_workspace=${focused_workspace//"\""/}
+    for i in `seq $from $to`
+    do 
+        if [ $i == $focused_workspace ]; then 
+            result+=" (button :onclick \"i3-msg workspace $i\" :class \"workspace-button active\" $i)"
+        else
+            result+=" (button :onclick \"i3-msg workspace $i\" :class \"workspace-button\" $i)"
+        fi
+    done
+
+    result+=")"
+    printf "%s\n" "$result"
+}
+
+workspaces 
+xprop -spy -root _NET_CURRENT_DESKTOP | while read -r _; do
+workspaces 
+done

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+eww ping 
+if [ $? -ne 0 ]; then
+    eww daemon
+fi
+
+eww open $1

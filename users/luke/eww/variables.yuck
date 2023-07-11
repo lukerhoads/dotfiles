@@ -1,0 +1,15 @@
+(deflisten workspace `~/.dotfiles/users/luke/eww/bar/scripts/workspace 1 5`)
+
+(deflisten workspace_secondary `~/.dotfiles/users/luke/eww/bar/scripts/workspace 6 10`)
+
+(defpoll time :interval "10s"
+  `date +%H:%M`)
+
+(defpoll date :interval "10s"
+  `date '+%a %d %b'`)
+
+(deflisten wifi `~/.dotfiles/users/luke/eww/bar/scripts/wifi`)
+
+(deflisten volume `~/.dotfiles/users/luke/eww/sliders/scripts/update_volume`)
+
+(defvar home "/home/luke/.dotfiles/users/luke/eww")

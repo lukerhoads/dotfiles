@@ -1,0 +1,36 @@
+.volume {
+    border-radius: 5px;
+    background-color: #1e1e2e;
+    border: 2px solid #2f3042;
+}
+
+.container {
+    padding: 0 30px;
+    padding-top: 20px;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+.heading {
+    font-size: x-large;
+    color: #c4d2f1;
+}
+
+.description {
+    color: #c4d2f1;
+    opacity: 0.7;
+}
+
+.slide trough highlight {
+    background-image: linear-gradient(to right, #c19ef0 0%, #7e72c4 100% *50);;
+    border-radius: 10px;
+}
+
+.slide trough {
+    background-color: #313244;
+    border-radius: 10px;
+    min-height: 6px;
+    min-width: 200px;
+}

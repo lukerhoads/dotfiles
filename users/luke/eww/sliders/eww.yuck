@@ -1,0 +1,53 @@
+(defwidget volume [metric img value onchange]
+    (box 
+        :orientation "v" 
+        :class "container"
+        (display
+            :metric metric 
+            :img img 
+            :value value)
+        (slider
+            :value value
+            :onchange onchange)))
+
+(defwidget display [metric img value] 
+    (box 
+        :orientation "h" 
+        :halign "fill"
+        :hexpand true
+        :space-evenly false
+        (image 
+            :halign "start"
+            :path img 
+            :image-width 60 
+            :image-height 60)
+        (box 
+            :orientation "v"
+            :hexpand true
+            :class "info"
+            (label :text metric :halign "start" :class "heading")
+            (label :text "Currently at ${value}%" :halign "start" :class "description"))))
+
+(defwidget slider [value onchange] 
+    (scale 
+        :halign "fill"
+        :class "slide" 
+        :hexpand true 
+        :min 0 
+        :max 100 
+        :value value 
+        :onchange onchange))
+
+(defwindow volume
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "10%"
+                               :width "280px"
+                               :anchor "top center")
+           :stacking "fg"
+           :wm-ignore true
+  (volume
+    :metric "Volume"
+    :img "${home}/images/volume-gradient.png"
+    :value volume
+    :onchange "amixer set 'Master' {}%"))

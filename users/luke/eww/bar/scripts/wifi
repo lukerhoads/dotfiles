@@ -1,0 +1,10 @@
+#!/bin/sh
+
+wifi() {
+    nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d':' -f2
+}
+
+wifi
+while sleep 60; do
+wifi
+done
