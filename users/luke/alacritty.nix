@@ -9,7 +9,7 @@
       };
 
       window = {
-        opacity = 0.9;
+        opacity = 0.5;
         dynamic_title = false;
         padding = {
           x = 15;

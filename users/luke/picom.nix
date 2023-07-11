@@ -17,8 +17,8 @@
     };
     opacityRules = [
       "99:fullscreen"
-      "90:class_g = 'Alacritty' && focused"
-      "80:class_g = 'Alacritty' && !focused"
+      "100:class_g = 'Alacritty' && focused"
+      "100:class_g = 'Alacritty' && !focused"
       "100:class_g = 'Firefox' && focused"
       "100:class_g = 'Firefox' && !focused"
     ];

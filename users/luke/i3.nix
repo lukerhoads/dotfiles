@@ -51,7 +51,7 @@ in {
           "${modifier}+Shift+p" = "exec systemctl poweroff";
           "${modifier}+Shift+plus" = "exec amixer set 'Master' 5%+";
           "${modifier}+Shift+minus" = "exec amixer set 'Master' 5%-";
-          "${modifier}+m" = "exec spotify";
+          "${modifier}+m" = "exec --no-startup-id i3-msg 'workspace 5'; exec spotify";
         };
       bars = [
         {
@@ -72,6 +72,9 @@ in {
       workspace 9 output DP-1 
       workspace 10 output DP-1 
       border_radius 5   
+      for_window [class="Spotify"] floating enable
+      for_window [class="Spotify"] resize set width 1200px, height 500px
+      for_window [class="Spotify"] move position center
     '';
   };
 }
