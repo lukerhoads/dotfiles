@@ -17,6 +17,16 @@
         sha256 = "sha256-uUisQ8ULeP0bVpK8iZOBmu7WENGZSi0DLrmv8HsmEtA=";
       }
     ];
+    userSettings = {
+      "workbench.colorTheme" = "Catppuccin Mocha";
+      "window.titleBarStyle" = "custom";
+      "workbench.colorCustomizations" = {
+        "titleBar.activeBackground" = "#1e1e2e";
+        "titleBar.inactiveBackground" = "#181825";
+        "titleBar.activeForeground" = "#cdd6f3";
+        "titleBar.inactiveForeground" = "#cdd6f3";
+      };
+    };
   };
 }
 

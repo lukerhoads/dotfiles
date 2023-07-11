@@ -17,7 +17,7 @@ in {
           notification = false;
         }
         {
-          command = "${pkgs.feh}/bin/feh --no-startup-id --bg-fill /home/luke/wallpapers/cat_leaves.png";
+          command = "${pkgs.feh}/bin/feh --no-startup-id --bg-fill /home/luke/Pictures/wallpapers/cat_leaves.png";
           always = true;
           notification = false;
         }
@@ -51,6 +51,7 @@ in {
           "${modifier}+Shift+p" = "exec systemctl poweroff";
           "${modifier}+Shift+plus" = "exec amixer set 'Master' 5%+";
           "${modifier}+Shift+minus" = "exec amixer set 'Master' 5%-";
+          "${modifier}+m" = "exec spotify";
         };
       bars = [
         {

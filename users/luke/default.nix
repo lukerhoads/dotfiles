@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -10,6 +10,7 @@
     ./git.nix
     ./gpg.nix
     ./vscode.nix
+    ./spicetify.nix
     ./rofi
     ./eww
   ];
@@ -40,6 +41,9 @@
     maim
     jq
     lxqt.pavucontrol-qt
+    git-credential-manager
+    dbus
+    spicetify-cli
   ];
 
   programs.home-manager.enable = true;

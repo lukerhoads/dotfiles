@@ -49,6 +49,7 @@
     windowManager.i3.enable = true;
     layout = "us";
   };
+  services.gnome.gnome-keyring.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
 
