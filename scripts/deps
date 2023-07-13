@@ -1,10 +1,25 @@
 #!/bin/sh
 
-echo "let
-  sources = import ./nix/sources.nix;
-  pkgs = import sources.nixpkgs {};
-in
-with pkgs;
-pkgs.mkShell {
-    buildInputs = [];
-}" > shell.nix
+if [ ! -f "./nix" ]; then 
+  echo "Initializing niv..."
+  niv init
+fi
+
+if [ ! -f "./shell.nix" ]; then
+  echo "Creating shell.nix..."
+  echo "let
+    sources = import ./nix/sources.nix;
+    pkgs = import sources.nixpkgs {};
+  in
+  with pkgs;
+  pkgs.mkShell {
+      buildInputs = [];
+  }" > shell.nix
+fi
+
+if [ ! -f "./.envrc" ]; then 
+  echo "Creating .envrc..."
+  echo "use nix" > .envrc
+fi
+
+echo "Done."
