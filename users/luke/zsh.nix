@@ -19,6 +19,7 @@ in
     shellAliases = {
       apply = "sh ~/.dotfiles/scripts/apply";
       update = "sh ~/.dotfiles/scripts/update";
+      deps = "sh ~/.dotfiles/scripts/deps";
     };
   };
 }
