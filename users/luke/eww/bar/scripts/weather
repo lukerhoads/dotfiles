@@ -14,9 +14,9 @@ elif [[ $sky_conditions == *"cloud"* ]]; then
 else 
     # Check time - if night, moon, if day, sun, else rising sun
     currenttime=$(date +%H:%M)
-    if [[ currenttime > "08:00" ]] && [[ currenttime < "18:00" ]]; then
+    if [[ $currenttime > "08:00" ]] && [[ $currenttime < "18:00" ]]; then
         icon="☀️"
-    elif [[ currentTime < "05:00" ]] || [[ currenttime > "21:00" ]]; then 
+    elif [[ $currentTime < "05:00" ]] || [[ $currenttime > "21:00" ]]; then 
         icon="💤"
     else 
         icon="🌅"

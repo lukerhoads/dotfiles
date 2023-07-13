@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, outputs, ... }:
 
 {
   imports = [
@@ -47,6 +47,8 @@
     spicetify-cli
     discord
     weather
+    outputs.packages.beautifuldiscord
+    outputs.packages.i3-rounded-notitle
   ];
 
   programs.home-manager.enable = true;

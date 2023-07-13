@@ -3,7 +3,6 @@
     stdenv,
     fetchFromGitHub,
     python3Packages,
-    psutil
 }:
 
 python3Packages.buildPythonApplication {
@@ -15,6 +14,6 @@ python3Packages.buildPythonApplication {
         sha256 = "sha256-F+k/ytcuTM3v7g9u9hO/oDC0+lTL8UhC9kT9NxdHXI0=";
     };
 
-    propagatedBuildInputs = [ psutil ];
+    propagatedBuildInputs = [ python3Packages.psutil ];
     doCheck = false;
 }

@@ -1,10 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, outputs, lib, ... }:
 
 let 
   homeDir = "/home/luke";
 in {
   xsession.windowManager.i3 = {
-    package = pkgs.i3-rounded;
+    package = outputs.packages.i3-rounded-notitle;
     enable = true;
     config = {
       modifier = "Mod4";
@@ -49,8 +49,8 @@ in {
           "${modifier}+Shift+b" = "exec firefox";
           "${modifier}+Shift+s" = "exec systemctl suspend";
           "${modifier}+Shift+p" = "exec systemctl poweroff";
-          "${modifier}+v+plus" = "exec amixer set 'Master' 5%+";
-          "${modifier}+v+minus" = "exec amixer set 'Master' 5%-";
+          "${modifier}+Shift+plus" = "exec amixer set 'Master' 5%+";
+          "${modifier}+Shift+minus" = "exec amixer set 'Master' 5%-";
           "${modifier}+Shift+m" = "exec --no-startup-id i3-msg 'workspace 5'; exec spotify";
           "${modifier}+z" = "split horizontal";
           "${modifier}+h" = "focus left";

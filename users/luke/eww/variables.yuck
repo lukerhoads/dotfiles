@@ -8,7 +8,7 @@
 (defpoll date :interval "10s"
   `date '+%a %d %b'`)
 
-(defpoll wthr :interval "10m" :initial "Fetching weather..."
+(defpoll wthr :interval "60s" :initial "Fetching weather..."
   `~/.dotfiles/users/luke/eww/bar/scripts/weather`)
 
 (deflisten wifi `~/.dotfiles/users/luke/eww/bar/scripts/wifi`)

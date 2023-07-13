@@ -18,16 +18,17 @@
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
+      inherit (self) outputs;
       system = "x86_64-linux";
     in
-    {
+    rec {
       packages = 
         let pkgs = nixpkgs.legacyPackages.${system};
         in import ./pkgs { inherit nixpkgs; };
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
       nixosConfigurations = {
         home = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/home
             home-manager.nixosModules.home-manager
@@ -36,7 +37,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.luke = import ./users/luke;
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = { inherit inputs outputs; };
               };
             }
           ];
