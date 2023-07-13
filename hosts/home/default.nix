@@ -72,6 +72,11 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.pulseaudio = true;
 
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+
   fonts = {
     fonts = with pkgs; [
       cantarell-fonts

@@ -46,12 +46,21 @@ in {
       keybindings =
         let modifier = config.xsession.windowManager.i3.config.modifier;
         in lib.mkOptionDefault {
-          "${modifier}+b" = "exec firefox";
+          "${modifier}+Shift+b" = "exec firefox";
           "${modifier}+Shift+s" = "exec systemctl suspend";
           "${modifier}+Shift+p" = "exec systemctl poweroff";
-          "${modifier}+Shift+plus" = "exec amixer set 'Master' 5%+";
-          "${modifier}+Shift+minus" = "exec amixer set 'Master' 5%-";
-          "${modifier}+m" = "exec --no-startup-id i3-msg 'workspace 5'; exec spotify";
+          "${modifier}+v+plus" = "exec amixer set 'Master' 5%+";
+          "${modifier}+v+minus" = "exec amixer set 'Master' 5%-";
+          "${modifier}+Shift+m" = "exec --no-startup-id i3-msg 'workspace 5'; exec spotify";
+          "${modifier}+z" = "split horizontal";
+          "${modifier}+h" = "focus left";
+          "${modifier}+j" = "focus down";
+          "${modifier}+k" = "focus up";
+          "${modifier}+l" = "focus right";
+          "${modifier}+Shift+h" = "move left";
+          "${modifier}+Shift+j" = "move down";
+          "${modifier}+Shift+k" = "move up";
+          "${modifier}+Shift+l" = "move right";
         };
       bars = [
         {
@@ -66,15 +75,17 @@ in {
       workspace 3 output HDMI-1
       workspace 4 output HDMI-1
       workspace 5 output HDMI-1
-      workspace 6 output DP-1 
-      workspace 7 output DP-1 
-      workspace 8 output DP-1 
-      workspace 9 output DP-1 
-      workspace 10 output DP-1 
+      workspace 6 output DP-1
+      workspace 7 output DP-1
+      workspace 8 output DP-1
+      workspace 9 output DP-1
+      workspace 10 output DP-1
       border_radius 5   
       for_window [class="Spotify"] floating enable
-      for_window [class="Spotify"] resize set width 1200px, height 500px
+      for_window [class="Spotify"] resize set width 1200px
       for_window [class="Spotify"] move position center
+      for_window [class="Discord"] move to workspace 4
+      for_window [class="Discord"] resize set width 1200px
     '';
   };
 }

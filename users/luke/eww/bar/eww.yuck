@@ -1,6 +1,8 @@
 (defwidget bar []
   (centerbox :orientation "h"
-    (workspaces :wsps workspace)
+    (box :space-evenly false
+      (workspaces :wsps workspace) 
+      (weather))
     (center)
     (metrics)))
 
@@ -16,6 +18,14 @@
        :space-evenly true
        :halign "start"
     (literal :content wsps)))
+
+(defwidget weather []
+  (box :class "weather-wrap"
+    (button :class "weather"
+       :halign "start"
+       :orientation "h"
+      (label :text wthr))))
+  
 
 (defwidget center []
   (box ""))

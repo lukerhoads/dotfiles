@@ -21,7 +21,10 @@
       system = "x86_64-linux";
     in
     {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      packages = 
+        let pkgs = nixpkgs.legacyPackages.${system};
+        in import ./pkgs { inherit nixpkgs; };
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
       nixosConfigurations = {
         home = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };

@@ -1,1 +1,28 @@
 #!/bin/sh
+
+raw_weather=$(weather --forecast --no-cache-data 60035)
+temperature=$(echo $raw_weather | awk -F ": " '/Temperature/ { sub(/ F.*/, "", $2); print $2 }')
+sky_conditions=$(echo $raw_weather | awk -F ": " '/Sky conditions/ { print $2 }')
+
+icon=""
+if [[ $sky_conditions == *"thunder"* ]]; then 
+    icon=""
+elif [[ $sky_conditions == *"rain"* ]]; then 
+    icon="🌧️"
+elif [[ $sky_conditions == *"cloud"* ]]; then 
+    icon="☁️"
+else 
+    # Check time - if night, moon, if day, sun, else rising sun
+    currenttime=$(date +%H:%M)
+    if [[ currenttime > "08:00" ]] && [[ currenttime < "18:00" ]]; then
+        icon="☀️"
+    elif [[ currentTime < "05:00" ]] || [[ currenttime > "21:00" ]]; then 
+        icon="💤"
+    else 
+        icon="🌅"
+    fi
+fi
+
+if [[ $temperature != "" ]]; then 
+    echo "${icon} ${temperature}°"
+fi

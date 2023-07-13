@@ -11,6 +11,7 @@
     ./gpg.nix
     ./vscode.nix
     ./spicetify.nix
+    ./direnv.nix
     ./rofi
     ./eww
   ];
@@ -44,6 +45,8 @@
     git-credential-manager
     dbus
     spicetify-cli
+    discord
+    weather
   ];
 
   programs.home-manager.enable = true;
