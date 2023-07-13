@@ -25,6 +25,7 @@
       packages = 
         let pkgs = nixpkgs.legacyPackages.${system};
         in import ./pkgs { inherit nixpkgs; };
+      overlays = import ./overlays { inherit inputs; };
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
       nixosConfigurations = {
         home = nixpkgs.lib.nixosSystem {

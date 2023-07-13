@@ -47,7 +47,7 @@
     spicetify-cli
     discord
     weather
-    outputs.packages.beautifuldiscord
+    niv
     outputs.packages.i3-rounded-notitle
   ];
 
