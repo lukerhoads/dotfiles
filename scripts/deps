@@ -22,4 +22,5 @@ if [ ! -f "./.envrc" ]; then
   echo "use nix" > .envrc
 fi
 
+direnv allow
 echo "Done."

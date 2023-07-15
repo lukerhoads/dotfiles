@@ -48,6 +48,7 @@
     discord
     weather
     niv
+    unzip
     outputs.packages.i3-rounded-notitle
   ];
 
