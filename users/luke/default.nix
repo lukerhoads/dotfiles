@@ -50,6 +50,7 @@
     niv
     unzip
     outputs.packages.i3-rounded-notitle
+    obs-studio
   ];
 
   programs.home-manager.enable = true;

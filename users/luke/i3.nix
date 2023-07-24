@@ -61,6 +61,8 @@ in {
           "${modifier}+Shift+j" = "move down";
           "${modifier}+Shift+k" = "move up";
           "${modifier}+Shift+l" = "move right";
+          "${modifier}+o" = "exec maim -s -u -o ~/Pictures/screenshot-$(date '+%Y%m%d-%H%M%S').png";
+          "${modifier}+Shift+o" = "exec maim -s -u -o | xclip -selection clipboard -t image/png";
         };
       bars = [
         {
