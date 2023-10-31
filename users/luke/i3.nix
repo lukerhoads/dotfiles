@@ -1,8 +1,12 @@
 { config, pkgs, outputs, lib, ... }:
 
-let 
+# Note - to reconnect to wifi use the command
+# sudo nmcli dev wifi connect Gr0d password 'password'
+
+let
   homeDir = "/home/luke";
-in {
+in
+{
   xsession.windowManager.i3 = {
     package = outputs.packages.i3-rounded-notitle;
     enable = true;
@@ -47,6 +51,7 @@ in {
         let modifier = config.xsession.windowManager.i3.config.modifier;
         in lib.mkOptionDefault {
           "${modifier}+Shift+b" = "exec firefox";
+          "${modifier}+Shift+n" = "exec firefox -P school";
           "${modifier}+Shift+s" = "exec systemctl suspend";
           "${modifier}+Shift+p" = "exec systemctl poweroff";
           "${modifier}+Shift+plus" = "exec amixer set 'Master' 5%+";
@@ -61,8 +66,8 @@ in {
           "${modifier}+Shift+j" = "move down";
           "${modifier}+Shift+k" = "move up";
           "${modifier}+Shift+l" = "move right";
-          "${modifier}+o" = "exec maim -s -u -o ~/Pictures/screenshot-$(date '+%Y%m%d-%H%M%S').png";
-          "${modifier}+Shift+o" = "exec maim -s -u -o | xclip -selection clipboard -t image/png";
+          "${modifier}+r" = "exec maim -s -u -o ~/Pictures/screenshot-$(date '+%Y%m%d-%H%M%S').png";
+          "${modifier}+Shift+r" = "exec maim -s -u -o | xclip -selection clipboard -t image/png";
         };
       bars = [
         {

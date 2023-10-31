@@ -8,7 +8,8 @@
     extraConfig = {
       init = { defaultBranch = "main"; };
       credential.helper = "manager";
-      credential.credentialStore = "secretservice";
+      credential.credentialStore = "gpg";
+      http.postBuffer = "524288000";
     };
   };
 }

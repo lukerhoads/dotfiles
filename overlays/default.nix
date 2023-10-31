@@ -4,5 +4,5 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-  };  
+  };
 }

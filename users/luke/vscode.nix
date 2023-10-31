@@ -3,7 +3,7 @@
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    extensions = with pkgs.vscode-extensions; [ ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "yuck";
         publisher = "eww-yuck";

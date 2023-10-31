@@ -37,7 +37,7 @@
     vscode
     killall
     eww
-    xclip 
+    xclip
     xdotool
     maim
     jq
@@ -51,6 +51,7 @@
     unzip
     outputs.packages.i3-rounded-notitle
     obs-studio
+    pass
   ];
 
   programs.home-manager.enable = true;

@@ -22,7 +22,7 @@
       system = "x86_64-linux";
     in
     rec {
-      packages = 
+      packages =
         let pkgs = nixpkgs.legacyPackages.${system};
         in import ./pkgs { inherit nixpkgs; };
       overlays = import ./overlays { inherit inputs; };
